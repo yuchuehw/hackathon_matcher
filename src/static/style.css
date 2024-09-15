@@ -1,0 +1,127 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General body styling */
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Header and navigation */
+.site-header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand .header-logo-image {
+    height: 40px;
+}
+
+.site-nav .nav {
+    list-style: none;
+    display: flex;
+}
+
+.site-nav .nav li {
+    margin-left: 20px;
+}
+
+.site-nav .nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Hero section */
+.hero {
+    background-color: #007bff;
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero-paragraph {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero-cta .button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.hero-cta .button-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+.site-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-brand .header-logo-image {
+    height: 40px;
+}
+
+.footer-links, .footer-social-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li, .footer-social-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a, .footer-social-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-copyright {
+    margin-top: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .site-nav .nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .site-nav .nav li {
+        margin: 10px 0;
+    }
+
+    .hero-title {
+        font-size: 28px;
+    }
+
+    .hero-paragraph {
+        font-size: 16px;
+    }
+}
