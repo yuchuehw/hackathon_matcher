@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hackathon Matcher</title>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://unpkg.com/animejs@3.0.1/lib/anime.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+</head>
+<body class="is-boxed has-animations">
+    <div class="body-wrap" style="height:100vh">
+        <header class="site-header">
+            <div class="container">
+                <div class="site-header-inner">
+                    <div class="brand header-brand">
+                        <h1 class="m-0">
+                            <a href="{{ url_for('index') }}">
+                                <img class="header-logo-image" src="{{ url_for('static', filename='logo.svg') }}" alt="Logo">
+                            </a>
+                        </h1>
+                    </div>
+                    <nav class="site-nav">
+                        <ul class="nav">
+                            <li><a href="{{ url_for('register') }}">Register</a></li>
+                            {% if current_user %}
+                                <li><a href="{{ url_for('matches', username=current_user) }}">Find Matches</a></li>
+                                <li><a href="{{ url_for('profile', username=current_user) }}">Profile</a></li>
+                                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                            {% else %}
+                                <li><a href="{{ url_for('login') }}">Login</a></li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-inner">
+                        <div class="hero-copy">
+                            <h1 class="hero-title mt-0">Welcome to Hackathon Matcher</h1>
+                            <p class="hero-paragraph">Connect with others based on your technology and skills.</p>
+                            {% if not current_user %}
+                                <div class="hero-cta">
+                                    <a class="button button-primary" href="{{ url_for('register') }}">Get Started</a>
+                                </div>
+                            {% else %}
+                                <div class="hero-cta">
+                                    <a class="button button-primary" href="{{ url_for('matches', username=current_user) }}">Find Matches</a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer" style="height:100%">
+            <div class="container">
+                <div class="site-footer-inner">
+                    <div class="brand footer-brand">
+                        <a href="{{ url_for('index') }}">
+                            <img class="header-logo-image" src="{{ url_for('static', filename='logo.svg') }}" alt="Logo">
+                        </a>
+                    </div>
+                    <ul class="footer-links list-reset">
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">FAQ's</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                    <ul class="footer-social-links list-reset">
+                        <li><a href="#"><span class="screen-reader-text">Facebook</span> [Facebook Icon]</a></li>
+                        <li><a href="#"><span class="screen-reader-text">Twitter</span> [Twitter Icon]</a></li>
+                        <li><a href="#"><span class="screen-reader-text">Google</span> [Google Icon]</a></li>
+                    </ul>
+                    <div class="footer-copyright">&copy; 2024 Hackathon Matcher. All rights reserved</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='main.min.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ user['username'] }}'s Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .card h2 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        .card p {
+            font-size: 1em;
+            margin: 0.5em 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+            <h1>{{ user['username'] }}'s Profile</h1>
+            <p><strong>Hackathon you plan to attend:</strong> {{ user['hackathon'] }}</p>
+            <p><strong>Technologies you know:</strong> {{ user['technology1'] }}</p>
+            <p><strong>Technologies you want to learn:</strong> {{ user['technology2'] }}</p>
+            <p><strong>Question1:</strong> {{ user['question1'] }}</p>
+            <p><strong>Question2:</strong> {{ user['question2'] }}</p>
+            <p><strong>Question3:</strong> {{ user['question3'] }}</p>
+						<a href="#" class="btn">Edit Profile</a>
+						<a href="{{ url_for('matches', username=user['username']) }}" class="btn">Find Matches</a>
+    </div>
+</body>
+</html>

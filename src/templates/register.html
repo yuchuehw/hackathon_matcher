@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin-top: 0;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            color: #555;
+        }
+        .chosen-select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007BFF;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <form method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="hackathon">Hackathons you want to attend:</label>
+            <select id="hackathon" name="hackathon" multiple class="chosen-select" required>
+<option value="TechTogether Online">TechTogether Online</option>
+<option value="Hacks for Hackers">Hacks for Hackers</option>
+<option value="HackBattle: React vs Angular">HackBattle: React vs Angular</option>
+<option value="Global Hack Week: Data">Global Hack Week: Data</option>
+<option value="HackRU">HackRU</option>
+<option value="HackUTA 2023">HackUTA 2023</option>
+<option value="The Golden Hack 5.0">The Golden Hack 5.0</option>
+<option value="Data Hackfest">Data Hackfest</option>
+<option value="HackGT X">HackGT X</option>
+<option value="Hack the Valley">Hack the Valley</option>
+<option value="Hackanile cal hacks">Hackanile cal hacks</option>
+<option value="Hacknc logo">Hacknc logo</option>
+<option value="Datathon23">Datathon23</option>
+<option value="Hackcbs 6.0 vector">Hackcbs 6.0 vector</option>
+<option value="Hacknjit 2 mlh backsplash">Hacknjit 2 mlh backsplash</option>
+<option value="Gunnhacks 10.0">Gunnhacks 10.0</option>
+<option value="Hackbi">Hackbi</option>
+<option value="Hacktams">Hacktams</option>
+<option value="Tamuhack">Tamuhack</option>
+<option value="InnovateHER Hackathon">InnovateHER Hackathon</option>
+<option value="MorganHacks">MorganHacks</option>
+<option value="HackKU">HackKU</option>
+<option value="HogHacks">HogHacks</option>
+<option value="Vihaan 007">Vihaan 007</option>
+<option value="DragonHacks 2024">DragonHacks 2024</option>
+<option value="KleinHacks">KleinHacks</option>
+<option value="RiverHacks 2024">RiverHacks 2024</option>
+<option value="UTA Datathon">UTA Datathon</option>
+<option value="Bitcamp 2024">Bitcamp 2024</option>
+<option value="Hackathon Troyano 2024">Hackathon Troyano 2024</option>
+<option value="LA Hacks">LA Hacks</option>
+<option value="Web3Apps">Web3Apps</option>
+<option value="DragonHack">DragonHack</option>
+<option value="HackDartmouth IX">HackDartmouth IX</option>
+<option value="TribeHacks">TribeHacks</option>
+<option value="All In Open Source Hackathon">All In Open Source Hackathon</option>
+<option value="HackDavis 2024">HackDavis 2024</option>
+<option value="GDSCHACKS Guelph">GDSCHACKS Guelph</option>
+<option value="HackUPC">HackUPC</option>
+<option value="Hackathon Morelos">Hackathon Morelos</option>
+</select>
+
+            <label for="technologies_known">Technologies You Already Know:</label>
+            <select id="technologies_known" name="technologies_known" multiple class="chosen-select" required>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Python">Python</option>
+                <option value="React">React</option>
+                <option value="Node.js">Node.js</option>
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="Java">Java</option>
+                <option value="SQL">SQL</option>
+                <option value="Docker">Docker</option>
+                <option value="AWS">AWS</option>
+                <option value="Firebase">Firebase</option>
+                <option value="Bootstrap">Bootstrap</option>
+                <option value="Angular">Angular</option>
+                <option value="Vue.js">Vue.js</option>
+                <option value="Swift">Swift</option>
+                <option value="Kotlin">Kotlin</option>
+                <option value="Android Studio">Android Studio</option>
+                <option value="Xcode">Xcode</option>
+                <option value="Jenkins">Jenkins</option>
+                <option value="Postman">Postman</option>
+                <option value="GraphQL">GraphQL</option>
+                <option value="MongoDB">MongoDB</option>
+                <option value="Redis">Redis</option>
+                <option value="TensorFlow">TensorFlow</option>
+                <option value="PyTorch">PyTorch</option>
+                <option value="Jupyter Notebook">Jupyter Notebook</option>
+                <option value="OpenAI API">OpenAI API</option>
+                <option value="ElasticSearch">ElasticSearch</option>
+                <option value="MySQL">MySQL</option>
+                <option value="SQLite">SQLite</option>
+                <option value="Apache Kafka">Apache Kafka</option>
+                <option value="Terraform">Terraform</option>
+                <option value="Vagrant">Vagrant</option>
+                <option value="Apache Hadoop">Apache Hadoop</option>
+                <option value="Kubernetes">Kubernetes</option>
+                <option value="Nginx">Nginx</option>
+                <option value="Apache">Apache</option>
+                <option value="C++">C++</option>
+                <option value="C#">C#</option>
+                <option value="Ruby on Rails">Ruby on Rails</option>
+                <option value="Laravel">Laravel</option>
+                <option value="WordPress">WordPress</option>
+                <option value="Django">Django</option>
+                <option value="Spring Boot">Spring Boot</option>
+                <option value="Unity">Unity</option>
+                <option value="Unreal Engine">Unreal Engine</option>
+                <option value="GitHub">GitHub</option>
+                <option value="GitLab">GitLab</option>
+                <option value="Bitbucket">Bitbucket</option>
+            </select>
+
+            <label for="technologies_learning">Technologies You Want to Learn:</label>
+            <select id="technologies_learning" name="technologies_learning" multiple class="chosen-select" required>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Python">Python</option>
+                <option value="React">React</option>
+                <option value="Node.js">Node.js</option>
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="Java">Java</option>
+                <option value="SQL">SQL</option>
+                <option value="Docker">Docker</option>
+                <option value="AWS">AWS</option>
+                <option value="Firebase">Firebase</option>
+                <option value="Bootstrap">Bootstrap</option>
+                <option value="Angular">Angular</option>
+                <option value="Vue.js">Vue.js</option>
+                <option value="Swift">Swift</option>
+                <option value="Kotlin">Kotlin</option>
+                <option value="Android Studio">Android Studio</option>
+                <option value="Xcode">Xcode</option>
+                <option value="Jenkins">Jenkins</option>
+                <option value="Postman">Postman</option>
+                <option value="GraphQL">GraphQL</option>
+                <option value="MongoDB">MongoDB</option>
+                <option value="Redis">Redis</option>
+                <option value="TensorFlow">TensorFlow</option>
+                <option value="PyTorch">PyTorch</option>
+                <option value="Jupyter Notebook">Jupyter Notebook</option>
+                <option value="OpenAI API">OpenAI API</option>
+                <option value="ElasticSearch">ElasticSearch</option>
+                <option value="MySQL">MySQL</option>
+                <option value="SQLite">SQLite</option>
+                <option value="Apache Kafka">Apache Kafka</option>
+                <option value="Terraform">Terraform</option>
+                <option value="Vagrant">Vagrant</option>
+                <option value="Apache Hadoop">Apache Hadoop</option>
+                <option value="Kubernetes">Kubernetes</option>
+                <option value="Nginx">Nginx</option>
+                <option value="Apache">Apache</option>
+                <option value="C++">C++</option>
+                <option value="C#">C#</option>
+                <option value="Ruby on Rails">Ruby on Rails</option>
+                <option value="Laravel">Laravel</option>
+                <option value="WordPress">WordPress</option>
+                <option value="Django">Django</option>
+                <option value="Spring Boot">Spring Boot</option>
+                <option value="Unity">Unity</option>
+                <option value="Unreal Engine">Unreal Engine</option>
+                <option value="GitHub">GitHub</option>
+                <option value="GitLab">GitLab</option>
+                <option value="Bitbucket">Bitbucket</option>
+            </select>
+
+            <label for="question">What other question would you like to ask other hackers?</label>
+            <input type="text" id="question" name="question">
+
+            <input type="submit" value="Register">
+        </form>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".chosen-select").chosen({
+                no_results_text: "Oops, nothing found!",
+                width: '100%'
+            });
+        });
+    </script>
+</body>
+</html>
