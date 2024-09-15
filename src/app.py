@@ -85,6 +85,10 @@ def quizz(uid=None):
         return redirect(url_for('matches',username=session['username']))
     return render_template('quizz.html',user=user)
 
+@app.route('/request')
+def request():
+    return render_template('request.html')
+
 @app.errorhandler(404)
 def not_found_error(error):
     return render_template('error.html', message="Page not found."), 404
