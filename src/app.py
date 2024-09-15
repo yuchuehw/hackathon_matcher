@@ -89,6 +89,10 @@ def quizz(uid=None):
 def request():
     return render_template('request.html')
 
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
+
 @app.errorhandler(404)
 def not_found_error(error):
     return render_template('error.html', message="Page not found."), 404
